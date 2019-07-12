@@ -11,10 +11,12 @@ class my_pne_predictor():
 
   def deserialize(self):
     filename = 'final1.sav' #path to the saved model
+    print('loading')
     model = pickle.load(open(filename, 'rb'))
     return model
 
   def predict(self):
+    print('predicting')
     model = self.deserialize()
     img = image.load_img(self.file, target_size=(224, 224))
     x = image.img_to_array(img)
