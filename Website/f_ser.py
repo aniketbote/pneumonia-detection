@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from flask_cors import CORS
 import os
 from werkzeug.utils import secure_filename
-from pneumonia_predictor import my_pne_predictor
+from support import pneumonia_predictor as p
 
 UPLOAD_FOLDER = 'images'
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg']
@@ -33,7 +33,7 @@ def upload_file():
                                     # secure_filename(f.filename)
                                     )
               f.save(filename)
-              value = my_pne_predictor(filename).predict()
+              value = p.my_pne_predictor(filename).predict()
               if value == 0:
                   value = "pneumonia not detected"
               else:
