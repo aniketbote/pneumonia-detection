@@ -35,4 +35,4 @@ tensorflow-estimator==1.13.0
 termcolor==1.1.0
 urllib3==1.24.3
 Werkzeug==0.15.2
-wheel==0.33.3
+wheel==0.33.4
